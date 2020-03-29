@@ -9,6 +9,13 @@ jupyter = "*"
 [packages]
 jupyter = "*"
 cookiecutter = "*"
+pandas = "*"
+numpy = "*"
+scipy = "*"
+sklearn = "*"
+statsmodels = "*"
+seaborn = "*"
+pymc3 = "*"
 
 [requires]
 python_version = "3.8"
