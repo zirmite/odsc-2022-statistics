@@ -1,12 +1,14 @@
+"""blah."""
 import pandas as pd
 import numpy as np
 import scipy.stats as stats
 import seaborn as sns
 
-## Lesson 1 data functions
+# Lesson 1 data functions
 
 
 def counts_data(mean=100, size=1000, seed=None):
+    """Generate simple column of counts data as a Pandas Series."""
     if seed is not None:
         np.random.seed(seed)
 
@@ -17,12 +19,18 @@ def counts_data(mean=100, size=1000, seed=None):
 
 
 def add_nan(data, frac=0.05, seed=None):
+    """
+    Given a column of data, return that column with (at most) the specified
+    fraction of NaN values.
+    """
     if seed is not None:
         np.random.seed(seed)
 
     data.ravel()[
         np.random.choice(
-            data.size, np.int(data.size * frac * np.random.random()), replace=False
+            data.size,
+            np.int(data.size * frac * np.random.random()),
+            replace=False,
         )
     ] = np.nan
 
@@ -48,7 +56,7 @@ def plot_anscombe():
     )
 
 
-## Lesson 2 data functions
+# Lesson 2 data functions
 
 
 def continuous_data(mean=100, std=25.0, size=1000, seed=None):
