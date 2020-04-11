@@ -37,6 +37,13 @@ def add_nan(data, frac=0.05, seed=None):
     return pd.Series(data=data)
 
 
+def add_noise(data, sn=5.0):
+
+    data = data + np.random.normal(loc=0, scale=data.mean()/sn)
+
+    return data
+
+
 def plot_anscombe():
     # Load the example dataset for Anscombe's quartet
     df = sns.load_dataset("anscombe")
@@ -59,7 +66,7 @@ def plot_anscombe():
 # Lesson 2 data functions
 
 
-def continuous_data(mean=100, std=25.0, size=1000, seed=None):
+def continuous_data_one(mean=100, std=25.0, size=1000, seed=None):
     if seed is not None:
         np.random.seed(seed)
 
