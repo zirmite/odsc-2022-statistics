@@ -7,7 +7,7 @@ import seaborn as sns
 # Lesson 1 data functions
 
 
-def counts_data(mean=100, size=1000, seed=None):
+def tweets_data(mean=50, size=1000, seed=None):
     """Generate simple column of counts data as a Pandas Series."""
     if seed is not None:
         np.random.seed(seed)
@@ -38,7 +38,7 @@ def add_nan(data, frac=0.05, seed=None):
 
 
 def add_noise(data, sn=5.0):
-    data = data + np.random.normal(loc=0, scale=data.mean()/sn)
+    data = data + np.random.normal(loc=0, scale=data.mean()/sn, size=data.size)
     return data
 
 
