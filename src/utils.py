@@ -38,9 +38,7 @@ def add_nan(data, frac=0.05, seed=None):
 
 
 def add_noise(data, sn=5.0):
-
     data = data + np.random.normal(loc=0, scale=data.mean()/sn)
-
     return data
 
 
