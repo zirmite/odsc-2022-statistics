@@ -16,6 +16,7 @@ sklearn = "*"
 statsmodels = "*"
 seaborn = "*"
 pymc3 = "*"
+jupyterlab = "*"
 
 [requires]
 python_version = "3.8"
