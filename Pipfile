@@ -12,10 +12,7 @@ cookiecutter = "*"
 pandas = "*"
 numpy = "*"
 scipy = "*"
-sklearn = "*"
-statsmodels = "*"
 seaborn = "*"
-pymc3 = "*"
 jupyterlab = "*"
 
 [requires]

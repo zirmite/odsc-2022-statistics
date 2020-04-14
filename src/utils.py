@@ -86,3 +86,12 @@ def continuous_data_one(mean=100, std=25.0, size=1000, seed=None):
     samples = np.random.normal(loc=mean, scale=std, size=size)
 
     return pd.Series(data=samples)
+
+
+def cumulative_d(data):
+    data = pd.Series(data)
+    sorted_data = data.sort_values()
+    n = data.size
+    y = np.arange(1, n + 1) / n
+
+    return (sorted_data, y)
