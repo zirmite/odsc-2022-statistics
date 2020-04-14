@@ -7,15 +7,28 @@ import seaborn as sns
 # Lesson 1 data functions
 
 
-def tweets_data(mean=50, size=1000, seed=None):
+def wknd_add(x):
+    if x.dayofweek in (5, 6):
+        return 1
+    else:
+        return 0
+
+
+def tweets_data(mean=50, size=1000, seed=None, wknd_offset=0.1):
     """Generate simple column of counts data as a Pandas Series."""
     if seed is not None:
         np.random.seed(seed)
 
     # generate counts data
     samples = np.random.poisson(mean, size=size)
+    dates = pd.date_range('2016-01-01', periods=size)
 
-    return pd.Series(data=samples)
+    # more on the weekend
+    wknd_samples = np.random.poisson(mean * wknd_offset, size=size) * dates.map(
+        wknd_add
+    )
+
+    return pd.Series(data=samples + wknd_samples, index=dates)
 
 
 def add_nan(data, frac=0.05, seed=None):
@@ -38,7 +51,9 @@ def add_nan(data, frac=0.05, seed=None):
 
 
 def add_noise(data, sn=5.0):
-    data = data + np.random.normal(loc=0, scale=data.mean()/sn, size=data.size)
+    data = data + np.random.normal(
+        loc=0, scale=data.mean() / sn, size=data.size
+    )
     return data
 
 
