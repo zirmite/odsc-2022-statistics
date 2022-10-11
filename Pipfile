@@ -16,4 +16,4 @@ seaborn = "*"
 jupyterlab = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.10"
