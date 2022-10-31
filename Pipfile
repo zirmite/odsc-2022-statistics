@@ -14,6 +14,7 @@ numpy = "*"
 scipy = "*"
 seaborn = "*"
 jupyterlab = "*"
+matplotlib = "3.6.0"
 
 [requires]
 python_version = "3.10"
