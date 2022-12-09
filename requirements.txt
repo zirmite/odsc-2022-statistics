@@ -11,7 +11,7 @@ backcall==0.2.0
 beautifulsoup4==4.11.1 ; python_full_version >= '3.6.0'
 binaryornot==0.4.4
 bleach==5.0.1 ; python_version >= '3.7'
-certifi==2022.9.24 ; python_version >= '3.6'
+certifi==2022.12.7 ; python_version >= '3.6'
 cffi==1.15.1
 chardet==5.0.0 ; python_version >= '3.6'
 charset-normalizer==2.1.1 ; python_full_version >= '3.6.0'
